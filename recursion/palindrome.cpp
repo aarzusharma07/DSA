@@ -1,0 +1,23 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+#include <bits/stdc++.h>
+using namespace std;
+int i=0;
+bool palindrome(string s){
+    if(i>s.length()/2){
+        return true;
+    }
+    if(s[i]!=s[s.length()-i-1]){
+        return false;
+    }
+    i++;
+    return palindrome(s);
+}
+int main() {
+    if(palindrome("sir")==true){
+        cout<<"is palindrome";
+    }else{
+        cout<<"not palindrome";
+    }
+    return 0;
+}
