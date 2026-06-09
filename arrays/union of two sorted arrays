@@ -1,0 +1,49 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+#include <vector>
+using namespace std;
+vector<int> unions(vector<int>& a,vector<int>& b){
+	vector<int> unions;
+	int n1=a.size();
+	int n2=b.size();
+	int i=0;
+	int j=0;
+	while(i<n1 && j<n2){
+		if(a[i]<=b[j]){
+			if(unions.empty()|| unions.back()!=a[i]){
+			 unions.push_back(a[i]);
+			 
+			}
+			i++;
+		}
+		else{
+			if(unions.empty()|| unions.back()!=b[j]){
+				 unions.push_back(b[j]);
+			}
+			j++;
+		}
+	}
+	while(i<n1){
+		if(unions.empty()|| unions.back()!=a[i]){
+			 unions.push_back(a[i]);
+			 
+			}
+			i++;
+	}
+	while(j<n2){
+		if(unions.empty()|| unions.back()!=b[j]){
+				 unions.push_back(b[j]);
+			}
+			j++;
+	}
+	return unions;
+}
+int main() {
+  vector<int> a={1,2,3,4,5,6,7,8,9,10};
+  vector<int> b={2,3,4,4,5,11,12};
+ vector<int> ans=unions(a,b);
+  for(int x:ans){
+  	cout<<x<<" ";
+  }
+      return 0;
+}
