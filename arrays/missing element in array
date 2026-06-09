@@ -1,0 +1,29 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int  missing(vector<int>& a){
+
+	for(int i=1;i<=a.size();i++){
+		bool found=false;
+		for(int j=0;j<a.size();j++){
+			if(a[j]==i){
+				found=true;
+				break;
+	       }
+		}
+		if(!found){
+			return i;
+		}
+	
+	}
+
+
+}
+int main() {
+  vector<int> a={8, 2, 4, 5, 3, 7, 1};
+   cout<<missing(a);
+    
+      return 0;
+}
