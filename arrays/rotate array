@@ -1,0 +1,25 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+#include <vector>
+using namespace std;
+void rotate(vector<int>& a,int k){
+	for(int m=1;m<=k;m++){
+	
+	int key=a[a.size()-1];
+	for(int i=a.size()-1;i>0;i--){
+		a[i]=a[i-1];
+	}
+	a[0]=key;
+}
+}
+int main() {
+  int k;
+  cin>>k;
+  vector<int> a={1,2,3,4,5};
+  rotate(a,3);
+  for(int i=0;i<a.size();i++){
+  	cout<<a[i]<<" ";
+  }
+
+    return 0;
+}
